@@ -1,0 +1,12 @@
+{
+	"plugin-data":
+	{
+		"name": "BlThemes RSS Feed",
+		"description": "This plugin generate RSS feed for your site ."
+	},
+	"amount-of-items-to-show-on-the-feed": "Amount of items to show on the feed.",
+	"rss-url": "RSS Feed URL",
+	"limit-the-description-to-number-of-words": "Limit the description to number of words.",
+  "maximum-number-of-words-in-the-description": "Maximum number of words in the description"
+ 
+}
