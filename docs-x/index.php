@@ -81,11 +81,14 @@
 			});
 
 			//smooth scroll to id
-			$('a[href*="#"]').on('click', function (e) {
+			$('a[href^="#"]').on('click', function (e) {
 				e.preventDefault();
-				$('html, body').animate({
-					scrollTop: $($(this).attr('href')).offset().top
-				}, 500, 'linear');
+				var target = this.hash;
+				var $target = $(target);
+				$('html, body').stop().animate({
+					scrollTop: $target.offset().top - 60
+				}, 900
+				);
 			});
 		});
 	</script>
