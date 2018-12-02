@@ -121,7 +121,7 @@
 			indexName: 'bludit',
 			inputSelector: '.ds-input',
 			algoliaOptions: { 'facetFilters': ["lang:en"] },
-			debug: true // Set debug to true if you want to inspect the dropdown
+			debug: false // Set debug to true if you want to inspect the dropdown
 		});
 	</script>
 
