@@ -95,8 +95,8 @@ class pluginBltRSSFeed extends Plugin
 			'svg' => 'image/svg+xml',
 			'svgz' => 'image/svg+xml',
 		);
-
-        $ext = strtolower(array_pop(explode('.', $filename)));
+		$tmp = explode('.', $filename);
+        $ext = strtolower(array_pop($tmp));
         if (array_key_exists($ext, $mime_types)) {
             return $mime_types[$ext];
         } else {
@@ -135,7 +135,7 @@ class pluginBltRSSFeed extends Plugin
 
         // Get keys of pages
         foreach ($list as $pageKey) {
-            try {              
+            try {
                 $page = new Page($pageKey);
                 $xml .= '<item>';
                 $xml .= '<title>'.$page->title().'</title>';
@@ -144,7 +144,7 @@ class pluginBltRSSFeed extends Plugin
                 if (!empty($page->category())) {
                     $xml .= '<category><![CDATA['.Sanitize::html($page->category()).']]></category>';
                 }
-                if (!empty($page->coverImage())) {
+                if ($page->coverImage()) {
                     $xml .= '<enclosure url="'.$page->coverImage().'" length="0" type="'.$this->imagefile_mime_type($page->coverImage()).'" />';
                 }
                 $xml .= '<pubDate>'.$page->date(DATE_RSS).'</pubDate>';
